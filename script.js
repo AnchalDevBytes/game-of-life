@@ -18,7 +18,7 @@ function createEmptyGrid() {
 
 function createDefaultGrid() {
   const grid = createEmptyGrid();
-  // Add some gliders to the grid to ensure continuous activity
+
   const gliders = [
     [1, 0, 0],
     [0, 1, 1],
@@ -77,13 +77,13 @@ function getNextGeneration(grid) {
       });
 
       if (cell === 1 && (neighbors < 2 || neighbors > 3)) {
-        return 0; // Underpopulation or Overpopulation
+        return 0;
       } else if (cell === 0 && neighbors === 3) {
-        return 1; // Reproduction
+        return 1;
       } else if (cell === 1 && (neighbors === 2 || neighbors === 3)) {
-        return 1; // Lives on to the next generation
+        return 1;
       } else {
-        return 0; // Remains the same
+        return 0;
       }
     })
   );
